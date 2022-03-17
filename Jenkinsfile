@@ -14,8 +14,10 @@ pipeline {
 
         stage('mvn dockerfile') {
             steps {
+                sh 'docker container rm -f devops-springboot'
                 sh 'docker image ls | grep library | awk \'{print "docker image rm " $3}\' | bash '
                 sh label: '', script: 'mvn dockerfile:build dockerfile:push'
+                sh label: '', script: 'docker run -itd  -p 8888:8080 --name devops-springboot 192.168.21.20:85/library/devops-springboot:0.0.1-SNAPSHOT'
 
             }
         }
