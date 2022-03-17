@@ -12,12 +12,5 @@ pipeline {
             }
         }
 
-        stage('mvn dockerfile') {
-            steps {
-                sh 'docker image ls | grep ebook-trading-platform | awk \'{print "docker image rm " $3}\' | bash '
-                sh label: '', script: 'mvn dockerfile:build dockerfile:push'
-
-            }
-        }
     }
 }
