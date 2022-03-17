@@ -15,7 +15,7 @@ public class HelloController {
 
     @GetMapping("hello")
     public String hello() {
-        return "hello devops!";
+        return "hello devops 2!";
     }
 }
 
