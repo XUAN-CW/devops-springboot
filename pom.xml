@@ -41,7 +41,7 @@
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.4.13</version>
                 <configuration>
-                    <repository>192.168.21.20:85/ebook-trading-platform/${project.artifactId}</repository>
+                    <repository>192.168.21.20:85/library/${project.artifactId}</repository>
                     <tag>${project.version}</tag>
                     <username>admin</username>
                     <password>Harbor12345</password>
